@@ -1,8 +1,18 @@
 class Bottles
   def verse(number)
     <<-VERSE
-#{number} bottles of beer on the wall, #{number} bottles of beer.
-Take one down and pass it around, #{number - 1} bottles of beer on the wall.
+#{n_bottles(number)} on the wall, #{n_bottles(number)}.
+Take one down and pass it around, #{n_bottles(number - 1)} on the wall.
 VERSE
+  end
+
+  private
+
+  def n_bottles(number)
+    if number == 1
+      "#{number} bottle of beer"
+    else
+      "#{number} bottles of beer"
+    end
   end
 end
